@@ -1,4 +1,3 @@
-
 {
   "name": "react-native-android-google-location",
   "version": "1.0.0",
@@ -8,13 +7,15 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
-    "react-native"
+    "react-native",
+    "android",
+    "location",
+    "google-play-service"
   ],
   "author": "",
   "license": "",
   "peerDependencies": {
     "react-native": "^0.41.2",
     "react-native-windows": "0.41.0-rc.1"
-
   }
 }
