@@ -15,18 +15,23 @@ import com.facebook.react.modules.core.DeviceEventManagerModule;
 
 public class RNAndroidGoogleLocationModule extends ReactContextBaseJavaModule
     implements LocationProvider.LocationCallback {
-
-  private final ReactApplicationContext reactContext;
+  // React Class Name as called from JS
+  public static final String REACT_CLASS = "RNAndroidGoogleLocation";
+  // Unique Name for Log TAG
   public static final String TAG = RNAndroidGoogleLocationModule.class.getSimpleName();
   // Save last Location Provided
   private Location mLastLocation;
   // The Google Play Services Location Provider
   private LocationProvider mLocationProvider;
+  // The React Native Context
   ReactApplicationContext mReactContext;
 
+  // Constructor Method as called in Package
   public RNAndroidGoogleLocationModule(ReactApplicationContext reactContext) {
     super(reactContext);
-    this.reactContext = reactContext;
+    // Save Context for later use
+    mReactContext = reactContext;
+
     // Get Location Provider from Google Play Services
     mLocationProvider = new LocationProvider(mReactContext.getApplicationContext(), this);
 
@@ -42,7 +47,7 @@ public class RNAndroidGoogleLocationModule extends ReactContextBaseJavaModule
 
   @Override
   public String getName() {
-    return "RNAndroidGoogleLocation";
+    return REACT_CLASS;
   }
 
   /*
